@@ -1,13 +1,7 @@
 # Bacteriophage–Bacteria Interaction (BPI) Model
 
 MATLAB code for fitting a generalized Lotka-Volterra competition model to growth
-experimental data from phage-challenged bacterial populations. This repository
-accompanies the manuscript:
-
-> **Phage pressure modulates competitive dynamics between susceptible and resistant
-> bacterial populations: a mathematical modeling study**
-> Phan, Shrestha, et al. *(under revision, Bulletin of Mathematical Biology)*
-
+experimental data from phage-challenged bacterial populations.
 ---
 
 ## Overview
@@ -166,82 +160,3 @@ and a_sr) for the *P. larvae* datasets.
 No additional third-party MATLAB toolboxes are required. Input data files are provided
 in Excel format (`.xlsx`) in each strain subfolder.
 
----
-
-## Usage
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/tphan86/BPI_model.git
-   ```
-
-2. Open MATLAB and navigate to the subfolder for the strain of interest, e.g.:
-   ```matlab
-   cd BPI_model/Y3650_Fern
-   ```
-
-3. Run the control fit first:
-   ```matlab
-   run_control_fit.m
-   ```
-   This fits a logistic growth model to the phage-free control data and saves the
-   estimated parameters for use in Stage 2.
-
-4. Run the full model fit:
-   ```matlab
-   run_model_fit.m
-   ```
-   This fits M1 and M2 to all four MOI treatments simultaneously and outputs
-   per-treatment R², RMSE, AIC, BIC, fitted parameter values, and figures.
-
-5. (P. larvae only) Run the profile likelihood analysis:
-   ```matlab
-   run_profile_likelihood.m
-   ```
-   This generates profile R² curves for a_rs and a_sr across all four treatments.
-
-Each script produces figures that are saved to the `figures/` subdirectory.
-
----
-
-## Output figures
-
-Each strain folder produces the following figures:
-
-| Figure | Description |
-|--------|-------------|
-| Control fit | Logistic growth fit to phage-free data (OD₆₀₀ and CFU/mL scales) |
-| M1 vs. M2 fit comparison | Side-by-side model fits for all four MOI treatments |
-| Residual comparison | Residual plots for M1 and M2 across treatments |
-| Optimal parameter values | Per-treatment optimal a_rs and a_sr under M1 and M2 |
-| Profile likelihood curves | Per-treatment R² as a function of fixed a_rs or a_sr (P. larvae only) |
-
----
-
-## Data
-
-Experimental data are provided in Excel files within each strain subfolder. Time is
-recorded in hours for *P. aeruginosa* and in minutes for *P. larvae*; the code converts
-*P. larvae* time to hours automatically. OD₆₀₀ values are converted to CFU/mL using
-the factor 1 OD₆₀₀ = 10⁹ CFU/mL prior to fitting.
-
----
-
-## Citation
-
-If you use this code, please cite the accompanying manuscript (citation will be updated
-upon acceptance).
-
----
-
-## License
-
-MIT License. See `LICENSE` for details.
-
----
-
-## Contact
-
-Tuan Phan — tphan86@github  
-For questions about the experimental data or biological interpretation, please refer
-to the manuscript.
