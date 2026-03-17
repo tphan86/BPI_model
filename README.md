@@ -2,6 +2,7 @@
 
 MATLAB code for fitting a generalized Lotka-Volterra competition model to growth
 experimental data from phage-challenged bacterial populations.
+
 ---
 
 ## Overview
@@ -25,17 +26,6 @@ BPI_model/
 ├── 25747_Fern/             # P. larvae 25747 challenged with phage Fern IDv1
 ├── README.md
 └── LICENSE
-```
-
-Each subfolder is self-contained and follows the same internal structure:
-
-```
-<strain_phage>/
-├── data/                   # Experimental OD600 data (loaded from Excel)
-├── control_fit/            # Stage 1: logistic growth fit to phage-free controls
-├── model_fit/              # Stage 2: full model fit to phage treatment data
-├── profile_likelihood/     # Profile likelihood analysis (P. larvae strains only)
-└── figures/                # Output figures
 ```
 
 ---
